@@ -1,0 +1,46 @@
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+h1{
+    margin-top: 50px;
+}
+.button{
+    border-radius: 7px;
+}
+.feedback{
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+}
+button{
+    font-size: larger;
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: rgb(0, 255, 76)
+}
+.input
+{
+    border-radius: 7px;
+    width: 200px;
+    height: 25px;
+}
+#scrollTopBtn {
+  display: none; /*Hidden by default */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 50px;
+}
+
+#scrollTopBtn:hover {
+  background-color: #555;
+}

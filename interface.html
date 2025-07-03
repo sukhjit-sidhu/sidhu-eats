@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="interface.css">
+  <link rel="icon" type="image/png" href="restaurant.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Home</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#" id="allBookingsBtn">All Bookings</a></li>
+      <li><a href="interface.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <h1 style="margin-top: 160px;">Enjoy Our<br>Delicious Meal</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing. Nostrum sapiente iusto qui,<br> cupiditate repellat possimus commodi officia eaque illum velit a atque necessitatibus,<br> minima esse sint modi itaque, inventore molestias!</p>
+  <button class="button" id="myBtn">Book a Table</button>
+
+  <!-- Booking Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="bookingForm">
+        <input class="input" id="Name" type="text" placeholder="Name" required><br><br>
+        <input class="input" id="Email" type="email" placeholder="Email" required><br><br>
+        <input class="input" id="Phone" type="number" placeholder="Phone No." required><br><br>
+        <input class="input" id="Booking" type="datetime-local" placeholder="Booking Date & Time" required><br><br>
+        <input class="input" id="Guests" type="number" placeholder="No. of Guests" required><br><br>
+        <button type="submit" class="mybutton">Reserve a Table</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- All Bookings Modal -->
+  <div id="bookingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-bookings">&times;</span>
+      <h2>All Bookings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Booking Date & Time</th>
+            <th>No. of Guests</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTableBody">
+          <!-- Populated via JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Script Section -->
+  <script>
+    // Open/Close booking modal
+    const bookingModal = document.getElementById("myModal");
+    const bookingBtn = document.getElementById("myBtn");
+    const closeBooking = document.getElementsByClassName("close")[0];
+
+    bookingBtn.onclick = function () {
+      bookingModal.style.display = "block";
+    }
+
+    closeBooking.onclick = function () {
+      bookingModal.style.display = "none";
+    }
+
+    // Handle form submit
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const Name = document.getElementById("Name").value;
+  const Email = document.getElementById("Email").value;
+  const Phone = document.getElementById("Phone").value;
+  const Booking = document.getElementById("Booking").value;
+  const Guests = document.getElementById("Guests").value;
+
+  const newEntry = {
+    name: Name,
+    email: Email,
+    phone: Phone,
+    booking: Booking,
+    guests: Guests
+  };
+
+  // Get existing bookings or initialize empty array
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  // Add new entry
+  bookings.push(newEntry);
+
+  // Save updated array back to localStorage
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+
+  alert("Reservation saved!");
+  bookingModal.style.display = "none";
+  document.getElementById("bookingForm").reset();
+});
+
+closeBooking.onclick = function () {
+  bookingModal.style.display = "none";
+};
+    // All bookings modal logic
+    const bookingsModal = document.getElementById("bookingsModal");
+    const allBookingsBtn = document.getElementById("allBookingsBtn");
+    const closeBookings = document.getElementsByClassName("close-bookings")[0];
+
+    allBookingsBtn.onclick = function () {
+  const tableBody = document.getElementById("bookingTableBody");
+  tableBody.innerHTML = ""; // Clear existing rows
+
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  bookings.forEach((booking) => {
+    const row = `
+      <tr>
+        <td>${booking.name}</td>
+        <td>${booking.email}</td>
+        <td>${booking.phone}</td>
+        <td>${booking.booking}</td>
+        <td>${booking.guests}</td>
+      </tr>
+    `;
+    tableBody.innerHTML += row;
+  });
+
+  bookingsModal.style.display = "block";
+};
+
+closeBookings.onclick = function () {
+  bookingsModal.style.display = "none";
+};
+
+    // Close modals on outside click
+    window.onclick = function (event) {
+      if (event.target == bookingModal) {
+        bookingModal.style.display = "none";
+      } else if (event.target == bookingsModal) {
+        bookingsModal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact Us</title>
+      <link rel="icon" type="image/png" href="restaurant.png">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form class="box" onsubmit="return enter()">
+    <h1>Contact Us<i class="fa-solid fa-phone-volume"></i></h1>
+    <input class="input" id="Name" type="text" placeholder="Name", required="required">
+    <br><br>
+    <input class="input" id="Phone" type="number" placeholder="Phone", required="required">
+    <br><br>
+    <input class="input" id="Email" type="email" placeholder="Email", required="required">
+    <br><br>
+    <input class="feedback" id="feedback" type="text" placeholder="FEEDBACK", required="required">
+    <br><br> 
+    <button class="button">SUBMIT</button>
+    <br><br>
+    <h2>Find Us Here</h2>
+    </form>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.967490043402!2d77.02699707484858!3d28.600752085524274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1dd61eb460af%3A0xe89377d97456bc5e!2sVegas%20Mall!5e0!3m2!1sen!2sin!4v1751012209285!5m2!1sen!2sin" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+    </body>
+    <script>
+        function enter() {
+            const Name= document.getElementById('Name').value;
+            const Phone= document.getElementById('Phone').value;
+            const Email= document.getElementById('Email').value;
+            const feedback= document.getElementById('feedback').value;
+
+            if (Name === '' || Subject === '' || Phone === '' || Email === '' || feedback === '') {
+                alert('All Fields are Necessary to fill. Please Fill Up.');
+            } else {
+                alert('Thank You For the Feedback');
+                window.location.href = "/interface.html";
+            }
+            return false;
+        }
+    </script>
+    <script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Show button when user scrolls down 20px
+  window.onscroll = () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top when button clicked
+  scrollTopBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+</html>

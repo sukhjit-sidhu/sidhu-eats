@@ -1,0 +1,49 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+body.dark {
+  --bg-color: #18122B;
+  --text-color: #ecf2ff;
+}
+li {
+  list-style-type: none;
+}
+.toggle-btn{
+    height: 10rem;
+    display: flex;
+    align-items: center;
+}
+.toggle-label{
+    width: 6rem;
+    height: 4rem;
+    background-color: #18122B;
+    display: inline-block;
+    position: relative;
+    border-radius: 10rem;
+    transition: background-color 0.3s ease;
+}
+#checkbox{
+    visibility: hidden;
+}
+#checkbox:checked + .toggle-label {
+    background-color: #4caf50;
+}
+#checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(2rem); /* Moves the ball to the right */
+}
+.toggle-ball{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #ecf2ff;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    transition: transform 0.3s ease;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="toggle.css" />
+  <title>Document</title>
+</head>
+<body>
+  <li>
+    <div class="toggle-btn">
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox" class="toggle-label">
+        <span class="toggle-ball"></span>
+      </label>
+    </div>
+  </li>
+
+  <!-- ✅ JavaScript: Closed correctly and placed at the end -->
+  <script>
+    const checkbox = document.getElementById('checkbox');
+    const body = document.body;
+
+    // Restore theme from localStorage on load
+    if (localStorage.getItem('theme') === 'dark') {
+      checkbox.checked = true;
+      body.classList.add('dark');
+    }
+
+    // Toggle dark/light mode
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
