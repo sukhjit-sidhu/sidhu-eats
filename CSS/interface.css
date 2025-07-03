@@ -10,7 +10,7 @@ body {
       color: white;
       text-align: left;
       background-size: cover;
-      background-image: url(home\ page\ bg.jpeg);
+      background-image: url(/Images/home_page.jpeg);
     }
 
     .navbar ul {

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="/CSS/contact.css">
     <title>Contact Us</title>
-      <link rel="icon" type="image/png" href="restaurant.png">
+      <link rel="icon" type="image/png" href="/Images/restaurant.png">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -33,11 +33,11 @@
             const Email= document.getElementById('Email').value;
             const feedback= document.getElementById('feedback').value;
 
-            if (Name === '' || Subject === '' || Phone === '' || Email === '' || feedback === '') {
+            if (Name === '' || Phone === '' || Email === '' || feedback === '') {
                 alert('All Fields are Necessary to fill. Please Fill Up.');
             } else {
                 alert('Thank You For the Feedback');
-                window.location.href = "/interface.html";
+                window.location.href = "interface.html";
             }
             return false;
         }

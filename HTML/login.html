@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/CSS/login.css">
     <title>Login</title>
-      <link rel="icon" type="image/png" href="restaurant.png">
+      <link rel="icon" type="image/png" href="/Images/restaurant.png">
 </head>
 <body>
     <div class="box">
@@ -28,7 +28,7 @@
             const password = document.getElementById('password').value;
 
             if (username === 'admin@admin.com' && password === '12345678') {
-                window.location.href = "/interface.html";
+                window.location.href = "interface.html";
             } else {
                 alert('Invalid credentials. Please try again.');
             }
