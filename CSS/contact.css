@@ -10,6 +10,7 @@ h1{
 }
 .button{
     border-radius: 7px;
+    cursor: pointer;
 }
 .feedback{
     width: 200px;
