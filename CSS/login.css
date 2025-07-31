@@ -1,35 +1,188 @@
-button{
-    width: 177px;
-    height: 30px;
-    color: white; 
-    background-color: blue;
-    border-radius: 24px;
-}
-body{
-    text-align: center;
-    font-size: larger;
-    border: 100px;
-    border-color: black;
-    margin: 170px;
-    background-size: cover;
-    background-image:url("https://palotoaamazontravel.com/wp-content/uploads/2025/03/Difference-Between-Rainforest-and-Jungle-2.webp")
-}
-.box{
-    width: 290px;
-    height: 290px;
-    border: 1px solid grey;
-    padding: 50px;
-    margin: 325px;
-    background-color: white;
-    border-radius: 24px;
-}
-.button:hover{
-    background-color: darkblue;
-    cursor: pointer;
-}
-.input{
-    border-radius: 5px;
-}
-.a{
-    text-decoration: none;
-}
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #1a1a1a;
+      --text-light: #1a1a1a;
+      --text-dark: #f4f4f4;
+      --card-light: white;
+      --card-dark: #2c2c2c;
+      --primary: #007bff;
+      --primary-dark: #0056b3;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('/Images/Login_Page.jpeg');
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-mode {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .toggle-container {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    .switch input:checked + .slider {
+      background-color: var(--primary);
+    }
+
+    .switch input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    .box {
+      background-color: var(--card-light);
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 320px;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .box {
+      background-color: var(--card-dark);
+      color: var(--text-dark);
+    }
+
+    .box h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .input:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #003d80);
+      transform: translateY(-2px);
+    }
+
+    .extras {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .extras input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    .a {
+      text-decoration: none;
+      color: var(--primary);
+      transition: color 0.2s ease;
+    }
+
+    .a:hover {
+      color: var(--primary-dark);
+    }
+
+    .create {
+      display: block;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 400px) {
+      .box {
+        width: 90%;
+        padding: 2rem 1.5rem;
+      }
+
+      .toggle-container {
+        right: 15px;
+        top: 15px;
+      }
+    }

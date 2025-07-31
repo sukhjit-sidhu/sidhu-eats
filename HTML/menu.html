@@ -6,17 +6,19 @@
   <title>Menu</title>
   <link rel="icon" type="image/png" href="/Images/restaurant.png" />
   <link rel="stylesheet" href="/CSS/menu.css">
-
 </head>
 <body>
   <nav class="navbar">
-    <ul>
-      <li><a href="interface.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html">Logout</a></li>
-    </ul>
+    <div class="container">
+      <a href="interface.html" class="logo">Sidhu‑Eats</a>
+      <ul class="nav-links">
+        <li><a href="interface.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </div>
   </nav>
 
   <div class="toggle-btn">
@@ -27,196 +29,48 @@
   </div>
 
   <h1>MENU</h1>
+  <p style="text-align:center; margin-top:-1rem; font-style:italic; color:gray;">“Good food is the foundation of genuine happiness.”</p>
+
   <div class="grid-container">
-    <!-- Sample structure for each dish item -->
-    <div class="card" 
-     data-name="Aalu Ka Parantha" 
-     data-desc="Stuffed indian flatbread filled with spiced mashed potatoes, pan-fried to golden perfection." 
-     data-price="₹60"
-     data-img="/Images/Aalu_Ka_Parantha.jpeg">
-      <img src="/Images/Aalu_Ka_Parantha.jpeg" alt="Aalu Ka Parantha" class="dish-img">
-      <h2>Aalu Ka Parantha</h2>
-      <p>Stuffed indian flatbread filled with spiced mashed potatoes, pan-fried to golden perfection.</p>
-    </div>
-
-    <div class="card"
-     data-name="Samosa"
-     data-desc="Deep-fried pastry filled with spiced potatoes/peas"
-     data-price="₹10"
-     data-img="/Images/Samosa.jpeg">
-      <img src="/Images/Samosa.jpeg" alt="Samosa" class="dish-img">
-      <h2>Samosa</h2>
-      <p>Deep-fried pastry filled with spiced potatoes/peas.</p>
-    </div>
-
-    <div class="card"
-     data-name="Paneer Tikka"
-     data-desc="Marinated cottage cheese grilled in a tandoor"
-     data-price="₹50"
-     data-img="/Images/Paneer_Tikka.jpeg">
-      <img src="/Images/Paneer_Tikka.jpeg" alt="Paneer Tikka" class="dish-img">
-      <h2>Paneer Tikka</h2>
-      <p>Marinated cottage cheese grilled in a tandoor.</p>
-    </div>
-
-    <div class="card"
-     data-name="Chicken Tikka/Tandoori Chicken"
-     data-desc="Marinated, grilled chicken"
-     data-price="₹80"
-     data-img="/Images/Chicken_Tikka.jpeg">
-      <img src="/Images/Chicken_Tikka.jpeg" alt="Chicken Tikka" class="dish-img">
-      <h2>Chicken Tikka / Tandoori Chicken</h2>
-      <p>Marinated, grilled chicken.</p>
-    </div>
-
-    <div class="card"
-     data-name="Hara Bhara Kabab"
-     data-desc="Spinach and green pea vegetarian cutlet"
-     data-price="₹60"
-     data-img="/Images/Hara_Bhara_Kabab.jpeg">
-      <img src="/Images/Hara_Bhara_Kabab.jpeg" alt="Hara Bhara Kabab" class="dish-img">
-      <h2>Hara Bhara Kabab</h2>
-      <p>Spinach and green pea vegetarian cutlet.</p>
-    </div>
-
-    <div class="card"
-     data-name="Seekh Kabab"
-     data-desc="Minced meat skewers (chicken/lamb)"
-     data-price="₹550"
-     data-img="/Images/Seekh_Kabab.jpeg">
-      <img src="/Images/Seekh_Kabab.jpeg" alt="Seekh Kabab" class="dish-img">
-      <h2>Seekh Kabab</h2>
-      <p>Minced meat skewers (chicken/lamb).</p>
-    </div>
-
-    <div class="card"
-     data-name="Masala Papad"
-     data-desc="Spiced, crispy papad with chopped veggies"
-     data-price="₹70"
-     data-img="/Images/Masala_Papad.jpeg">
-      <img src="/Images/Masala_Papad.jpeg" alt="Masala Papad" class="dish-img">
-      <h2>Masala Papad</h2>
-      <p>Spiced, crispy papad with chopped veggies.</p>
-    </div>
-
-    <div class="card"
-     data-name="Paneer Butter Masala"
-     data-desc="Paneer in rich, creamy tomato gravy"
-     data-price="₹110"
-     data-img="/Images/Paneer_Butter_Masala.jpeg">
-      <img src="/Images/Paneer_Butter_Masala.jpeg" alt="Paneer Butter Masala" class="dish-img">
-      <h2>Paneer Butter Masala</h2>
-      <p>Paneer in rich, creamy tomato gravy.</p>
-    </div>
-
-    <div class="card"
-     data-name="Butter Chicken"
-     data-desc="Chicken in creamy tomato sauce (very popular)"
-     data-price="₹270"
-     data-img="/Images/Butter_Chicken.jpeg">
-      <img src="/Images/Butter_Chicken.jpeg" alt="Butter Chicken" class="dish-img">
-      <h2>Butter Chicken</h2>
-      <p>Chicken in creamy tomato sauce (very popular).</p>
-    </div>
-
-    <div class="card"
-     data-name="Vegetable Biryani"
-     data-desc="Deep-fried pastry filled with spiced potatoes/peas"
-     data-price="₹300"
-     data-img="/Images/Vegetable_Biryani.jpeg">
-      <img src="/Images/Vegetable_Biryani.jpeg" alt="Vegetable Biryani" class="dish-img">
-      <h2>Vegetable Biryani</h2>
-      <p>Spiced rice with mixed vegetables.</p>
-    </div>
-
-    <div class="card"
-     data-name="Mutton Biryani"
-     data-desc="Fragrant rice cooked with marinated mutton"
-     data-price="₹190"
-     data-img="/Images/Mutton_Biryani.jpeg">
-      <img src="/Images/Mutton_Biryani.jpeg" alt="Mutton Biryani" class="dish-img">
-      <h2>Mutton Biryani</h2>
-      <p>Fragrant rice cooked with marinated mutton.</p>
-    </div>
-
-    <div class="card"
-     data-name="Naan"
-     data-desc="Soft, leavened tandoori bread"
-     data-price="₹50"
-     data-img="/Images/Naan.jpeg">
-      <img src="/Images/Naan.jpeg" alt="Naan" class="dish-img">
-      <h2>Naan</h2>
-      <p>Soft, leavened tandoori bread.</p>
-    </div>
-    
-    <div class="card"
-     data-name="Gulab Jamun"
-     data-desc="Fried dough balls soaked in sugar syrup"
-     data-price="₹10"
-     data-img="/Images/Gulab_Jamun.jpeg">
-      <img src="/Images/Gulab_Jamun.jpeg" alt="Gulab Jamun" class="dish-img">
-      <h2>Gulab Jamun</h2>
-      <p>Fried dough balls soaked in sugar syrup.</p>
-    </div>
-
-    <div class="card"
-     data-name="Lassi"
-     data-desc="Sweet or salted yogurt-based drink"
-     data-price="₹110"
-     data-img="/Images/Lassi.jpeg">
-      <img src="/Images/Lassi.jpeg" alt="Lassi" class="dish-img">
-      <h2>Lassi</h2>
-      <p>Sweet or salted yogurt-based drink.</p>
-    </div>
-
-    <div class="card"
-     data-name="Beer"
-     data-desc="Chilled. Crafted. Cheers! Discover the finest brews - only at our bar"
-     data-price="₹400"
-     data-img="/Images/Beer.jpeg">
-      <img src="/Images/Beer.jpeg" alt="Beer" class="dish-img">
-      <h2>Beer</h2>
-      <p>"Chilled. Crafted. Cheers! Discover the finest brews - only at our bar."</p>
-    </div>
-
-    <div class="card"
-     data-name="Tequila Wine"
-     data-desc="Premium aged Tequila with a smooth, rich flavour and a warm, golden finish. Perfect for sipping or shots"
-     data-price="₹3,00,000 - ₹5,00,000"
-     data-img="/Images/Wine.jpeg">
-      <img src="/Images/Wine.jpeg" alt="Tequila" class="dish-img">
-      <h2>Wine</h2>
-      <p>Premium aged Tequila with a smooth, rich flavour and a warm, golden finish. Perfect for sipping or shots.</p>
-    </div>
-
-    <!-- Add more items as needed -->
+    <div class="card" data-name="Aalu Ka Parantha" data-desc="Stuffed indian flatbread filled with spiced mashed potatoes, pan-fried to golden perfection." data-price="₹60" data-img="/Images/Aalu_Ka_Parantha.jpeg"><img src="/Images/Aalu_Ka_Parantha.jpeg" class="dish-img" alt="Aalu Ka Parantha"><h2>Aalu Ka Parantha</h2><p>Stuffed indian flatbread filled with spiced mashed potatoes, pan-fried to golden perfection.</p></div>
+    <div class="card" data-name="Samosa" data-desc="Deep‑fried pastry filled with spiced potatoes/peas" data-price="₹10" data-img="/Images/Samosa.jpeg"><img src="/Images/Samosa.jpeg" class="dish-img" alt="Samosa"><h2>Samosa</h2><p>Deep‑fried pastry filled with spiced potatoes/peas.</p></div>
+    <div class="card" data-name="Paneer Tikka" data-desc="Marinated cottage cheese grilled in a tandoor" data-price="₹50" data-img="/Images/Paneer_Tikka.jpeg"><img src="/Images/Paneer_Tikka.jpeg" class="dish-img" alt="Paneer Tikka"><h2>Paneer Tikka</h2><p>Marinated cottage cheese grilled in a tandoor.</p></div>
+    <div class="card" data-name="Chicken Tikka / Tandoori Chicken" data-desc="Marinated, grilled chicken" data-price="₹80" data-img="/Images/Chicken_Tikka.jpeg"><img src="/Images/Chicken_Tikka.jpeg" class="dish-img" alt="Chicken Tikka"><h2>Chicken Tikka / Tandoori Chicken</h2><p>Marinated, grilled chicken.</p></div>
+    <div class="card" data-name="Hara Bhara Kabab" data-desc="Spinach and green pea vegetarian cutlet" data-price="₹60" data-img="/Images/Hara_Bhara_Kabab.jpeg"><img src="/Images/Hara_Bhara_Kabab.jpeg" class="dish-img" alt="Hara Bhara Kabab"><h2>Hara Bhara Kabab</h2><p>Spinach and green pea vegetarian cutlet.</p></div>
+    <div class="card" data-name="Seekh Kabab" data-desc="Minced meat skewers (chicken/lamb)" data-price="₹550" data-img="/Images/Seekh_Kabab.jpeg"><img src="/Images/Seekh_Kabab.jpeg" class="dish-img" alt="Seekh Kabab"><h2>Seekh Kabab</h2><p>Minced meat skewers (chicken/lamb).</p></div>
+    <div class="card" data-name="Masala Papad" data-desc="Spiced, crispy papad with chopped veggies" data-price="₹70" data-img="/Images/Masala_Papad.jpeg"><img src="/Images/Masala_Papad.jpeg" class="dish-img" alt="Masala Papad"><h2>Masala Papad</h2><p>Spiced, crispy papad with chopped veggies.</p></div>
+    <div class="card" data-name="Paneer Butter Masala" data-desc="Paneer in rich, creamy tomato gravy" data-price="₹110" data-img="/Images/Paneer_Butter_Masala.jpeg"><img src="/Images/Paneer_Butter_Masala.jpeg" class="dish-img" alt="Paneer Butter Masala"><h2>Paneer Butter Masala</h2><p>Paneer in rich, creamy tomato gravy.</p></div>
+    <div class="card" data-name="Butter Chicken" data-desc="Chicken in creamy tomato sauce (very popular)" data-price="₹270" data-img="/Images/Butter_Chicken.jpeg"><img src="/Images/Butter_Chicken.jpeg" class="dish-img" alt="Butter Chicken"><h2>Butter Chicken</h2><p>Chicken in creamy tomato sauce (very popular).</p></div>
+    <div class="card" data-name="Vegetable Biryani" data-desc="Spiced rice with mixed vegetables" data-price="₹300" data-img="/Images/Vegetable_Biryani.jpeg"><img src="/Images/Vegetable_Biryani.jpeg" class="dish-img" alt="Vegetable Biryani"><h2>Vegetable Biryani</h2><p>Spiced rice with mixed vegetables.</p></div>
+    <div class="card" data-name="Mutton Biryani" data-desc="Fragrant rice cooked with marinated mutton" data-price="₹190" data-img="/Images/Mutton_Biryani.jpeg"><img src="/Images/Mutton_Biryani.jpeg" class="dish-img" alt="Mutton Biryani"><h2>Mutton Biryani</h2><p>Fragrant rice cooked with marinated mutton.</p></div>
+    <div class="card" data-name="Naan" data-desc="Soft, leavened tandoori bread" data-price="₹50" data-img="/Images/Naan.jpeg"><img src="/Images/Naan.jpeg" class="dish-img" alt="Naan"><h2>Naan</h2><p>Soft, leavened tandoori bread.</p></div>
+    <div class="card" data-name="Gulab Jamun" data-desc="Fried dough balls soaked in sugar syrup" data-price="₹10" data-img="/Images/Gulab_Jamun.jpeg"><img src="/Images/Gulab_Jamun.jpeg" class="dish-img" alt="Gulab Jamun"><h2>Gulab Jamun</h2><p>Fried dough balls soaked in sugar syrup.</p></div>
+    <div class="card" data-name="Lassi" data-desc="Sweet or salted yogurt‑based drink" data-price="₹110" data-img="/Images/Lassi.jpeg"><img src="/Images/Lassi.jpeg" class="dish-img" alt="Lassi"><h2>Lassi</h2><p>Sweet or salted yogurt‑based drink.</p></div>
+    <div class="card" data-name="Beer" data-desc="Chilled. Crafted. Cheers! Discover the finest brews - only at our bar" data-price="₹400" data-img="/Images/Beer.jpeg"><img src="/Images/Beer.jpeg" class="dish-img" alt="Beer"><h2>Beer</h2><p>Chilled. Crafted. Cheers! Discover the finest brews - only at our bar.</p></div>
+    <div class="card" data-name="Wine" data-desc="Premium aged Tequila with a smooth, rich flavour and a warm, golden finish. Perfect for sipping or shots" data-price="₹3,00,000 – ₹5,00,000" data-img="/Images/Wine.jpeg"><img src="/Images/Wine.jpeg" class="dish-img" alt="Wine"><h2>Wine</h2><p>Premium aged Tequila with a smooth, rich flavour and a warm, golden finish. Perfect for sipping or shots.</p></div>
   </div>
 
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
-<!-- Modal Structure -->
-<div id="dishModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img id="modal-img" src="" alt="Dish Image">
-    <h2 id="modal-title">Dish Name</h2>
-    <p id="modal-desc">Dish Description</p>
-    <p id="modal-price"><strong>Price:</strong> ₹0</p>
-    <button id="orderBtn" class="order-btn">Order Now</button>
-    <p id="order-msg" class="order-msg"></p>
+  <div id="dishModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-img" src="" alt="Dish Image">
+      <h2 id="modal-title">Dish Name</h2>
+      <p id="modal-desc">Dish Description</p>
+      <p id="modal-price"><strong>Price:</strong> ₹0</p>
+      <button id="orderBtn" class="order-btn">Order Now</button>
+      <p id="order-msg" class="order-msg"></p>
+    </div>
   </div>
-</div>
-
 
   <script>
     const checkbox = document.getElementById('checkbox');
     const body = document.body;
-
     if (localStorage.getItem('theme') === 'dark') {
       checkbox.checked = true;
       body.classList.add('dark');
     }
-
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) {
         body.classList.add('dark');
@@ -228,77 +82,42 @@
     });
 
     const scrollTopBtn = document.getElementById("scrollTopBtn");
-
     window.onscroll = () => {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
+      scrollTopBtn.style.display = window.scrollY > 20 ? "block" : "none";
     };
+    scrollTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    scrollTopBtn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
-<script>
-  const cards = document.querySelectorAll('.card');
-  const modal = document.getElementById('dishModal');
-  const modalImg = document.getElementById('modal-img');
-  const modalTitle = document.getElementById('modal-title');
-  const modalDesc = document.getElementById('modal-desc');
-  const modalPrice = document.getElementById('modal-price');
-  const closeModal = document.querySelector('.close');
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('dishModal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalPrice = document.getElementById('modal-price');
+    const closeModal = document.querySelector('.close');
+    const orderBtn = document.getElementById('orderBtn');
+    const orderMsg = document.getElementById('order-msg');
+    let currentDish = '';
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      modalImg.src = card.dataset.img;
-      modalTitle.textContent = card.dataset.name;
-      modalDesc.textContent = card.dataset.desc;
-      modalPrice.innerHTML = `<strong>Price:</strong> ${card.dataset.price}`;
-      modal.style.display = 'block';
-    });
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target == modal) {
-      modal.style.display = 'none';
-    }
-  });
-
-
-  const orderBtn = document.getElementById('orderBtn');
-  const orderMsg = document.getElementById('order-msg');
-
-  let currentDish = ''; // Store currently selected dish
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
+    cards.forEach(card => card.addEventListener('click', () => {
       currentDish = card.dataset.name;
       modalImg.src = card.dataset.img;
       modalTitle.textContent = card.dataset.name;
       modalDesc.textContent = card.dataset.desc;
       modalPrice.innerHTML = `<strong>Price:</strong> ${card.dataset.price}`;
-      orderMsg.style.display = 'none'; // Reset message
+      orderMsg.style.display = 'none';
       modal.style.display = 'block';
+    }));
+
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => e.target === modal && (modal.style.display = 'none'));
+
+    orderBtn.addEventListener('click', () => {
+      orderMsg.textContent = `✅ Order placed for ${currentDish}!`;
+      orderMsg.style.display = 'block';
+      const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+      orders.push(currentDish);
+      localStorage.setItem('orders', JSON.stringify(orders));
     });
-  });
-
-  orderBtn.addEventListener('click', () => {
-    orderMsg.textContent = `✅ Order placed for ${currentDish}!`;
-    orderMsg.style.display = 'block';
-
-    // Optionally store in localStorage
-    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
-    orders.push(currentDish);
-    localStorage.setItem('orders', JSON.stringify(orders));
-  });
-
-</script>
-
+  </script>
 </body>
 </html>

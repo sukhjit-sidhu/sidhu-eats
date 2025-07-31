@@ -1,123 +1,128 @@
-h1{
-  margin-left: 50px;
-}
-p{
-  margin-left: 50px;
-}
-body {
-      background-color: #222;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: left;
-      background-size: cover;
-      background-image: url(/Images/home_page.jpeg);
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --primary: #4caf50;
+      --accent: #2e7d32;
+      --toggle-bg-light: #ccc;
+      --toggle-bg-dark: #4caf50;
+      --shadow: rgba(0,0,0,0.1);
     }
 
-    .navbar ul {
-      list-style: none;
-      padding: 0;
+    body {
       margin: 0;
-      display: flex;
-      justify-content: flex-end;
+      font-family: 'Poppins', sans-serif;
+      background: url('/Images/home_page.jpeg') center/cover fixed;
+      color: var(--text);
+    }
+    body.dark { background-color: #18122B; color: #eee; }
+
+    .navbar {
+      position: sticky; top: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+    }
+    .container {
+      display: flex; align-items: center;
+      justify-content: space-between; padding:1rem 2rem;
+    }
+    .logo { font-size:1.6rem; font-weight:bold;
+      color: var(--primary); text-decoration:none;
+    }
+    .nav-links { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+    .nav-links a {
+      color:#fff; text-decoration:none; padding:0.5rem 1rem;
+      border-radius:20px; font-weight:500;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover { background: var(--primary); }
+
+    .toggle-btn { display:flex; justify-content:flex-end; margin:1rem 2rem 0; }
+
+    .toggle-label {
+      width:50px; height:26px; background: var(--toggle-bg-light);
+      border-radius:50px; cursor:pointer; position:relative;
+      transition: background 0.3s ease;
+    }
+    #checkbox { display:none; }
+    .toggle-ball {
+      width:20px; height:20px; background:#fff;
+      border-radius:50%; position:absolute; top:3px; left:3px;
+      transition: transform 0.3s ease;
+    }
+    #checkbox:checked + .toggle-label {
+      background: var(--toggle-bg-dark);
+    }
+    #checkbox:checked + .toggle-label .toggle-ball {
+      transform: translateX(24px);
     }
 
-    .navbar ul li a {
-      display: block;
-      padding: 14px 20px;
-      color: white;
-      text-decoration: none;
+    h1 {
+      margin:140px 2rem 1rem;
+      font-size:3rem; color:#fff;
     }
-
-    .navbar ul li a:hover {
-      background-color: #555;
+    p {
+      margin:1rem 2rem;
+      max-width:650px;
+      color:#fff; line-height:1.6;
+      font-size:1.05rem;
     }
-
-    h1, p {
-      margin-top: 100px;
-    }
-
     .button {
-      margin-top: 20px;
-      margin-left: 80px;
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
+      margin:1rem 2rem;
+      padding:12px 24px;
+      background: var(--primary);
+      color: #fff; border:none;
+      border-radius:6px; font-size:1rem;
+      cursor:pointer; transition: background 0.3s;
     }
-    .mybutton{
-      margin-left: 300px;
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .button:hover {
-      background-color: #45a049;
-    }
+    .button:hover { background: var(--accent); }
 
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 10;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
+      position:fixed; top:0; left:0;
+      width:100%; height:100%; background: rgba(0,0,0,0.7);
+      display:none; z-index:1001;
     }
-
     .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 30px;
-      border: 1px solid #888;
-      width: 60%;
-      color: black;
-      border-radius: 10px;
+      background:#fff; margin:5% auto;
+      padding:2rem; border-radius:10px;
+      max-width:600px; width:90%; color:#000;
     }
+    body.dark .modal-content { background:#222; color:#eee; }
 
     .close, .close-bookings {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
+      float:right; font-size:28px;
+      color:#888; cursor:pointer;
     }
+    .close:hover, .close-bookings:hover { color:#333; }
 
-    .close:hover, .close-bookings:hover {
-      color: black;
+    .input {
+      width:100%; padding:10px; margin-bottom:1rem;
+      border:1px solid #ccc; border-radius:5px; font-size:1rem;
     }
-
-    .modal table {
-      width: 100%;
-      border-collapse: collapse;
+    .mybutton {
+      display:block; width:100%; padding:12px;
+      background: var(--primary); color:#fff;
+      border:none; border-radius:6px;
+      font-size:1rem; cursor:pointer;
     }
+    .mybutton:hover { background: var(--accent); }
 
-    .modal table td {
-      padding: 10px;
+    #bookingsModal .modal-content { max-width:90%; overflow-x:auto; }
+
+    table {
+      width:100%; border-collapse:collapse; margin-top:1rem;
     }
-
-    input {
-      width: 100%;
-      padding: 8px;
+    th, td {
+      padding:12px 10px; border:1px solid #ccc;
+      font-size:0.95rem; text-align:left;
     }
+    th { background:#f4f4f4; color:#000; }
+    body.dark th { background:#333; color:#fff; }
 
-    #bookingTableBody td {
-      color: black;
-    }
-
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-
-    th {
-      background-color: #f4f4f4;
-      color: black;
+    @media(max-width:768px) { h1{ font-size:2.2rem;} p{font-size:1rem;} }
+    @media(max-width:480px){
+      .container{ flex-direction:column; align-items:flex-start;}
+      .nav-links{ flex-direction:column;}
     }

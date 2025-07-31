@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/CSS/interface.css">
-  <link rel="icon" type="image/png" href="/Images/restaurant.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Home</title>
+  <link rel="icon" href="/Images/restaurant.png" type="image/png" />
+  <link rel="stylesheet" href="/CSS/interface.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512‑Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-  <nav class="navbar">
-    <ul>
+<nav class="navbar">
+  <div class="container">
+    <a href="interface.html" class="logo">Sidhu‑Eats</a>
+    <ul class="nav-links">
       <li><a href="#" id="allBookingsBtn">All Bookings</a></li>
       <li><a href="interface.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -19,138 +23,107 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="login.html">Logout</a></li>
     </ul>
-  </nav>
-
-  <h1 style="margin-top: 160px;">Enjoy Our<br>Delicious Meal</h1>
-  <p><b>Welcome to Sidhu-Eats, where tradition meets taste!</b><br>Step into a world of rich Indian flavours, curated with passion <br> and served with elegance. Our 5-star dining experience blends <br> authentic spices, locally sourced ingredients, and modern culinary <br> artistry to bring you unforgettable dishes. Whether you are here for a <br> family dinner, a romantic evening, or a business lunch, we promise <br> warm hospitality, exceptional service, and menu that delights every <br> palate. Book your table now and taste the difference!</p>
-  <button class="button" id="myBtn">Book a Table</button>
-
-  <!-- Booking Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form id="bookingForm">
-        <input class="input" id="Name" type="text" placeholder="Name" required><br><br>
-        <input class="input" id="Email" type="email" placeholder="Email" required><br><br>
-        <input class="input" id="Phone" type="number" placeholder="Phone No." required><br><br>
-        <input class="input" id="Booking" type="datetime-local" placeholder="Booking Date & Time" required><br><br>
-        <input class="input" id="Guests" type="number" placeholder="No. of Guests" required><br><br>
-        <button type="submit" class="mybutton">Reserve a Table</button>
-      </form>
-    </div>
   </div>
+</nav>
 
-  <!-- All Bookings Modal -->
-  <div id="bookingsModal" class="modal">
-    <div class="modal-content">
-      <span class="close-bookings">&times;</span>
-      <h2>All Bookings</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Booking Date & Time</th>
-            <th>No. of Guests</th>
-          </tr>
-        </thead>
-        <tbody id="bookingTableBody">
-          <!-- Populated via JS -->
-        </tbody>
-      </table>
-    </div>
+<div class="toggle-btn">
+  <input type="checkbox" id="checkbox">
+  <label for="checkbox" class="toggle-label"><span class="toggle-ball"></span></label>
+</div>
+
+<h1>Enjoy Our<br>Delicious Meal</h1>
+<p>
+  <strong>Welcome to Sidhu‑Eats, where tradition meets taste!</strong><br>
+  Step into a world of rich Indian flavours, curated with passion and served with elegance. Our signature dining experience blends authentic spices, locally sourced ingredients, and modern culinary artistry to delight every palate.
+</p>
+<button class="button" id="myBtn">Book a Table</button>
+
+<!-- Booking Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="bookingForm">
+      <input class="input" id="Name" type="text" placeholder="Name" required>
+      <input class="input" id="Email" type="email" placeholder="Email" required>
+      <input class="input" id="Phone" type="tel" placeholder="Phone No." required>
+      <input class="input" id="Booking" type="datetime-local" required>
+      <input class="input" id="Guests" type="number" placeholder="No. of Guests" required>
+      <button type="submit" class="mybutton">Reserve a Table</button>
+    </form>
   </div>
+</div>
 
-  <!-- Script Section -->
-  <script>
-    // Open/Close booking modal
-    const bookingModal = document.getElementById("myModal");
-    const bookingBtn = document.getElementById("myBtn");
-    const closeBooking = document.getElementsByClassName("close")[0];
+<!-- All Bookings Modal -->
+<div id="bookingsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-bookings">&times;</span>
+    <h2>All Bookings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th><th>Email</th><th>Phone</th><th>Booking Time</th><th>Guests</th>
+        </tr>
+      </thead>
+      <tbody id="bookingTableBody"></tbody>
+    </table>
+  </div>
+</div>
 
-    bookingBtn.onclick = function () {
-      bookingModal.style.display = "block";
+<script>
+  const body = document.body;
+  const checkbox = document.getElementById("checkbox");
+  if (localStorage.getItem("theme")==="dark") {
+    body.classList.add("dark"); checkbox.checked = true;
+  }
+  checkbox.addEventListener("change",()=>{
+    if(checkbox.checked){
+      body.classList.add("dark"); localStorage.setItem("theme","dark");
+    } else {
+      body.classList.remove("dark"); localStorage.setItem("theme","light");
     }
-
-    closeBooking.onclick = function () {
-      bookingModal.style.display = "none";
-    }
-
-    // Handle form submit
-    document.getElementById("bookingForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const Name = document.getElementById("Name").value;
-  const Email = document.getElementById("Email").value;
-  const Phone = document.getElementById("Phone").value;
-  const Booking = document.getElementById("Booking").value;
-  const Guests = document.getElementById("Guests").value;
-
-  const newEntry = {
-    name: Name,
-    email: Email,
-    phone: Phone,
-    booking: Booking,
-    guests: Guests
-  };
-
-  // Get existing bookings or initialize empty array
-  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-
-  // Add new entry
-  bookings.push(newEntry);
-
-  // Save updated array back to localStorage
-  localStorage.setItem("bookings", JSON.stringify(bookings));
-
-  alert("Reservation saved!");
-  bookingModal.style.display = "none";
-  document.getElementById("bookingForm").reset();
-});
-
-closeBooking.onclick = function () {
-  bookingModal.style.display = "none";
-};
-    // All bookings modal logic
-    const bookingsModal = document.getElementById("bookingsModal");
-    const allBookingsBtn = document.getElementById("allBookingsBtn");
-    const closeBookings = document.getElementsByClassName("close-bookings")[0];
-
-    allBookingsBtn.onclick = function () {
-  const tableBody = document.getElementById("bookingTableBody");
-  tableBody.innerHTML = ""; // Clear existing rows
-
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-
-  bookings.forEach((booking) => {
-    const row = `
-      <tr>
-        <td>${booking.name}</td>
-        <td>${booking.email}</td>
-        <td>${booking.phone}</td>
-        <td>${booking.booking}</td>
-        <td>${booking.guests}</td>
-      </tr>
-    `;
-    tableBody.innerHTML += row;
   });
 
-  bookingsModal.style.display = "block";
-};
+  const bookingModal = document.getElementById("myModal"),
+        bookingsModal = document.getElementById("bookingsModal"),
+        bookingBtn = document.getElementById("myBtn"),
+        closeBooking = document.querySelector(".close"),
+        closeBookings = document.querySelector(".close-bookings"),
+        allBookingsBtn = document.getElementById("allBookingsBtn");
 
-closeBookings.onclick = function () {
-  bookingsModal.style.display = "none";
-};
+  bookingBtn.onclick = ()=> bookingModal.style.display="block";
+  closeBooking.onclick = ()=> bookingModal.style.display="none";
+  closeBookings.onclick = ()=> bookingsModal.style.display="none";
 
-    // Close modals on outside click
-    window.onclick = function (event) {
-      if (event.target == bookingModal) {
-        bookingModal.style.display = "none";
-      } else if (event.target == bookingsModal) {
-        bookingsModal.style.display = "none";
-      }
+  document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const entry = {
+      name:this.Name.value,
+      email:this.Email.value,
+      phone:this.Phone.value,
+      booking:this.Booking.value,
+      guests:this.Guests.value
     };
-  </script>
+    const arr = JSON.parse(localStorage.getItem("bookings"))||[];
+    arr.push(entry); localStorage.setItem("bookings",JSON.stringify(arr));
+    alert("Reservation saved!"); bookingModal.style.display="none"; this.reset();
+  });
+
+  allBookingsBtn.onclick = ()=>{
+    const tableBody = document.getElementById("bookingTableBody");
+    tableBody.innerHTML = "";
+    (JSON.parse(localStorage.getItem("bookings"))||[]).forEach(b=>{
+      tableBody.innerHTML+=`<tr>
+        <td>${b.name}</td><td>${b.email}</td><td>${b.phone}</td>
+        <td>${b.booking}</td><td>${b.guests}</td>
+      </tr>`;
+    });
+    bookingsModal.style.display = "block";
+  };
+
+  window.onclick = e=>{
+    if(e.target===bookingModal) bookingModal.style.display="none";
+    if(e.target===bookingsModal) bookingsModal.style.display="none";
+  };
+</script>
 </body>
 </html>

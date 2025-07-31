@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/login.css">
-    <title>Login</title>
-      <link rel="icon" type="image/png" href="/Images/restaurant.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="/CSS/login.css">
+  <link rel="icon" type="image/png" href="/Images/restaurant.png">
 </head>
-<body>
-    <div class="box">
-    <form onsubmit="return login()">
-    <h1>Log in</h1>
-    <input class="input" id="username" type="text" placeholder="Username" required="required">
-    <br><br>
-    <input class="input" id="password" type="password" placeholder="Password" required="required">
-    <br><br>
-    <button class="button"><b>Log in</b></button>
-    <br><br>
-    <pre><input class="input" type="checkbox">Remember me?     <a class="a" href="forgot.html">Forgot Password?</a></pre>
-    <a class="a" href="register.html">Create an Account</a>
-</form>
-</div>
-</body>
-    <script>
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+<body class="light-mode">
+  <!-- Toggle Switch (Top Right) -->
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="modeToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
 
-            if (username === 'admin@admin.com' && password === '12345678') {
-                window.location.href = "interface.html";
-            } else {
-                alert('Invalid credentials. Please try again.');
-            }
-            return false;
-        }
-    </script>
+  <!-- Login Box -->
+  <div class="box">
+    <form onsubmit="return login()">
+      <h1>Log in</h1>
+      <input class="input" id="username" type="text" placeholder="Username" required />
+
+      <div class="password-container">
+        <input class="input" id="password" type="password" placeholder="Password" required />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <button class="button" type="submit">Log in</button>
+
+      <div class="extras">
+        <label><input type="checkbox" /> Remember me</label>
+        <a class="a" href="forgot.html">Forgot Password?</a>
+      </div>
+
+      <a class="a create" href="register.html">Create an Account</a>
+    </form>
+  </div>
+
+  <script>
+    // Login Logic
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'admin@admin.com' && password === '12345678') {
+        window.location.href = 'interface.html';
+      } else {
+        alert('Invalid credentials. Please try again.');
+      }
+      return false;
+    }
+
+    // Show/Hide Password
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const toggleIcon = document.querySelector(".toggle-password");
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.textContent = "🙈";
+      } else {
+        passwordInput.type = "password";
+        toggleIcon.textContent = "👁️";
+      }
+    }
+
+    // Dark/Light Mode Toggle
+    const modeToggle = document.getElementById("modeToggle");
+
+    modeToggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
+    });
+  </script>
+</body>
 </html>
